@@ -93,6 +93,9 @@ class UserChangePasswordView(APIView):
     serializer = UserChangePasswordSerializer(data=request.data, context={'user':request.user})
     serializer.is_valid(raise_exception=True)
     return Response({'msg':'Password Changed Successfully'}, status=status.HTTP_200_OK)
+  
+  
+  
 
 class SendPasswordResetEmailView(APIView):
   renderer_classes = [UserRenderer]
